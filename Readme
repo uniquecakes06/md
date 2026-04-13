@@ -1,0 +1,261 @@
+File Structure
+/docs
+  /getting-started
+    overview.mdx
+    menu.mdx
+  /configuration
+    discord-tokens.mdx
+    telegram-tokens.mdx
+    chat-ids.mdx
+    keywords.mdx
+    features.mdx
+  /usage
+    commands.mdx
+    restart.mdx
+  /help
+    troubleshooting.mdx
+  mint.json
+🧭 mint.json (Sidebar Config)
+{
+  "name": "MeeseeksDiscord v2",
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "getting-started/overview",
+        "getting-started/menu"
+      ]
+    },
+    {
+      "group": "Configuration",
+      "pages": [
+        "configuration/discord-tokens",
+        "configuration/telegram-tokens",
+        "configuration/chat-ids",
+        "configuration/keywords",
+        "configuration/features"
+      ]
+    },
+    {
+      "group": "Usage",
+      "pages": [
+        "usage/commands",
+        "usage/restart"
+      ]
+    },
+    {
+      "group": "Help",
+      "pages": [
+        "help/troubleshooting"
+      ]
+    }
+  ]
+}
+
+📄 Pages
+
+/getting-started/overview.mdx
+# Overview
+
+MeeseeksDiscord v2 lets you forward Discord activity to Telegram.
+
+You can:
+- Forward messages based on keywords
+- Track member joins
+- Monitor tickets
+
+All configuration is done via Telegram.
+
+## Quick Setup
+
+1. Add Discord token(s)
+2. Add Telegram bot token(s)
+3. Set chat IDs
+4. Add keywords
+5. Enable features
+6. Restart the bot
+/getting-started/menu.mdx
+# Bot Menu
+
+To configure your bot, open the menu in Telegram:
+
+```bash
+/menu
+
+Use the interactive buttons to navigate and configure settings.
+
+
+---
+
+## `/configuration/discord-tokens.mdx`
+
+```mdx
+# Discord Tokens
+
+Add at least one Discord token to start receiving events.
+
+## Limits
+
+- Up to 5 tokens supported
+
+## Fields
+
+- Token 1
+- Token 2
+- Token 3
+- Token 4
+- Token 5
+
+## Notes
+
+- At least one token is required
+- Duplicate tokens are ignored
+- Duplicate events are automatically deduplicated
+/configuration/telegram-tokens.mdx
+# Telegram Tokens
+
+Configure your Telegram bot tokens.
+
+## Limits
+
+- Up to 3 tokens supported
+
+## Fields
+
+- Token 1 (Primary)
+- Token 2 (Fallback)
+- Token 3 (Fallback)
+
+## Fallback Logic
+
+If Token 1 fails:
+1. Token 2 is used
+2. Then Token 3
+/configuration/chat-ids.mdx
+# Chat IDs
+
+Set where alerts are sent.
+
+## Fields
+
+- Message Chat ID
+- Join Chat ID
+- Ticket Chat ID
+
+## Supported Formats
+
+```bash
+chat_id
+chat_id/topic_id
+Examples
+-1001234567890
+-1001234567890/12
+
+---
+
+## `/configuration/keywords.mdx`
+
+```mdx
+# Keywords
+
+Keywords control which messages get forwarded.
+
+## Example
+
+```bash
+ledger, withdraw, swap, deposit
+Behavior
+Messages are forwarded only if they match your keywords
+Applies to message forwarding only
+
+---
+
+## `/configuration/features.mdx`
+
+```mdx
+# Features
+
+Enable or disable bot features.
+
+## Available Features
+
+- Messages
+- Member Joins
+- Tickets
+
+## Rules
+
+- At least one feature must remain ON
+- If a feature is enabled, its Chat ID must be configured
+/usage/commands.mdx
+# Commands
+
+## Available Commands
+
+| Command        | Description           |
+|----------------|-----------------------|
+| `/start`       | Open welcome screen   |
+| `/menu`        | Open settings menu    |
+| `/status`      | Check bot status      |
+| `/startbot`    | Start the bot         |
+| `/stopbot`     | Stop the bot          |
+| `/restartbot`  | Restart the bot       |
+/usage/restart.mdx
+# Restarting the Bot
+
+You must restart the bot after making changes.
+
+## When to Restart
+
+- Tokens updated
+- Chat IDs changed
+- Keywords updated
+- Features toggled
+
+## How to Restart
+
+### Command
+
+```bash
+/restartbot
+Or
+
+Use the Restart Bot button in the menu.
+
+
+---
+
+## `/help/troubleshooting.mdx`
+
+```mdx
+# Troubleshooting
+
+## No Discord user token configured
+
+Add at least one token in **Discord Tokens**.
+
+---
+
+## Configure at least one Telegram bot token
+
+Set **Token 1** in Telegram Tokens.
+
+---
+
+## At least one feature must be on
+
+Enable one of:
+- Messages
+- Member Joins
+- Tickets
+
+---
+
+## No forwarded messages
+
+Check:
+
+- Message feature is ON
+- Keywords are configured
+- Message Chat ID is correct
+- Bot was restarted after changes
