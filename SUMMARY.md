@@ -7,13 +7,11 @@
 
 ## Guides
 
-***
-
-* [Discord Tokens](discord-tokens.md)
-* [Telegram Bot](telegram-bot.md)
-* [Chat IDs](chat-ids.md)
-* [Keywords](keywords.md)
-* [Features](features.md)
+* [Discord Tokens](guides/discord-tokens.md)
+* [Telegram Bot](guides/telegram-bot.md)
+* [Chat IDs](guides/chat-ids.md)
+* [Keywords](guides/keywords.md)
+* [Features](guides/features.md)
 
 ## Usage
 
